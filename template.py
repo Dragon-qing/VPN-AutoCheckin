@@ -1,8 +1,11 @@
 import requests
 import json
+import os
+
 
 def checkin():
-    with open("user.json", "r") as f:
+    userPath = os.path.join(os.path.dirname(__file__), "user.json")
+    with open(userPath, "r") as f:
         data = json.load(f)
     hostURL = data["hostURL"]
     webName = data["webName"]
